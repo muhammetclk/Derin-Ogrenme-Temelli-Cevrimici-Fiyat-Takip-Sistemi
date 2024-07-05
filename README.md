@@ -94,7 +94,7 @@ password_reset_token	varchar(255)	Kullanıcının şifresini sıfırlamak için 
 provider	enum	Kullanıcının kayıt olduğu sağlayıcıyı belirtir (örneğin, 'LOCAL', 'GOOGLE', 'FACEBOOK').
 role	enum	Kullanıcının rolünü belirtir (örneğin, 'USER', 'ADMIN').
 
-3.4.2. Kullanıcı Giriş İşlemi
+### 3.4.2. Kullanıcı Giriş İşlemi
 
 Kullanıcı kayıtlı ise e-posta ve şifre bilgisini kullanarak ya da “Google ile Giriş” butonunu kullanarak giriş yapabilir. Şekil 3.4.2.1. de gösterilmiştir. Eğer şifresini unuttuysa şifremi unuttum seçeneğine tıklayabilir. Eğer kullanıcı Çizelge 3.1'deki uygun olmayan formatta girdi yazarsa uyarı gösterilir ve “Giriş” butonuna basması engellenir. Şekil 3.1.2.2. de gösterilmiştir.
 
@@ -106,7 +106,7 @@ Kullanıcı kayıtlı ise e-posta ve şifre bilgisini kullanarak ya da “Google
   
 Şekil 3.4.2.2. Uygulama hatalı giriş arayüzü ekran görüntüsü.
 
-3.4.3. Hesap Doğrulama
+### 3.4.3. Hesap Doğrulama
 Kullanıcıya kayıt işleminin başarılı bir şekilde gerçekleştirdiğinde hesabını onaylaması için e-posta gönderildiğini gösteren bir pop-up gösterilir. Şekil 3.4.3.1. de gösterilmiştir. Eğer kullanıcının aktivasyon durumu onaylanmadıysa profilinden “Email Aktifleştirme” butonuna basıp gelen e-postadan hesabını aktifleştirdikten sonra giriş sayfasından hesabına giriş yapıp hesabını kullanabilir. Şekil 3.4.3.2. de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/7.png)
@@ -124,7 +124,7 @@ Kullanıcıya kayıt işleminin başarılı bir şekilde gerçekleştirdiğinde 
  
 Şekil 3.4.3.3. Aktivasyon Durumunu Gösteren Veri Tabanı Tablosu Kayıtları Örneği
 
-3.4.4. Şifre Sıfırlama
+### 3.4.4. Şifre Sıfırlama
 
 Kullanıcı şifresini unutması durumunda e-posta bilgisini girerek şifre sıfırlama talebinde bulunabilir. Şekil 3.4.4.1. de gösterilmiştir. Kullanıcıya şifre sıfırlaması benzersiz bir bağlantı gönderilir. Şekil 3.4.4.2. de gösterilmiştir.
 
@@ -136,7 +136,7 @@ Kullanıcı şifresini unutması durumunda e-posta bilgisini girerek şifre sıf
  
 Şekil 3.4.4.2 Şifre Sıfırlama Elektronik Postası Örneği
 
-3.4.5. Profil Bilgileri
+### 3.4.5. Profil Bilgileri
 
 Kullanıcı adının üstüne tıklayıp profiline ulaşabilir. Profilinden ad, soyad, e-posta veya şifre bilgilerini güncelleyebilir. Kullanıcının veri tabanından bulunan bilgileri inputlarda placeholder olarak gösterilir. Kullanıcı bilgi güncellemesi yapmak istemiyorsa iptal butonuna basarak çıkabilir. Kullanıcı e-posta adresi aktif değilse "Email Aktifleştirme" butonuna basarak hesap aktifleştirme maili alabilir. Şekil 3.4.5. de gösterilmiştir.
 
@@ -144,7 +144,7 @@ Kullanıcı adının üstüne tıklayıp profiline ulaşabilir. Profilinden ad, 
   
 Şekil 3.4.5. Profil Ekranı Örneği.
 
-3.4.5.1. E-Posta Güncelleme
+#### 3.4.5.1. E-Posta Güncelleme
 
 Kullanıcının mevcut e-posta adresi yer tutucu şeklinde gösterilir. Kullanıcı yeni e-posta bilgisini girip güncelle butonuna basarak e-posta adresi bilgisini güncelleyebilir. Kullanıcının oturumu sonlandırılır ve yeni e-posta adresiyle girmesi istenir. Ayrıca yeni e-posta adresine bir aktifleştirme maili gönderilir. Şekil 3.4.5.1. de gösterilmiştir.
 
@@ -152,7 +152,7 @@ Kullanıcının mevcut e-posta adresi yer tutucu şeklinde gösterilir. Kullanı
   
 Şekil 3.4.5.1. E-Posta Güncelleme Ekranı Örneği.
 
-3.4.5.2. Şifre Güncelleme
+#### 3.4.5.2. Şifre Güncelleme
 
 Kullanıcı şifre güncelleme sayfasına gelir. Mevcut şifre ve yeni şifresinin girilmesi istenir. Girilecek şifrenin bir büyük harf, bir küçük harf ve bir sayı içermesi ve altı karakter ya da daha uzun olması istenir. Kullanıcı güncelle butonuna bastığında oturumu sonlandırılır ve yeni şifre ile giriş yapması istenir. Şekil 3.4.5.2. de gösterilmiştir.
 
@@ -160,7 +160,7 @@ Kullanıcı şifre güncelleme sayfasına gelir. Mevcut şifre ve yeni şifresin
   
 Şekil 3.4.5.2. Şifre Güncelleme Ekranı Örneği.
 
-3.4.6. Ürün Arama
+### 3.4.6. Ürün Arama
 
 Kullanıcı bir ürünün linkini aradığında jsoup ile ürünün bilgileri tanımlanmış olan “id” veya “class” attribute'larından çekilir ve aranan link veri tabanına kaydedilir. Jsoup kazıma işlemini gerçekleştikten sonra elde edilen veriler veri tabanına kaydedilir. Kullanıcının kazıdığı ürünler yeniden eskiye doğru sıralı bir şekilde gösterilir. Veri tabanına kaydedilen ürünün detaylarına, ürün görsel üzerine tıklanarak ya da ürün ismine tıklanarak ulaşılabilir. Ürünü, listeden sil butonuna basıp silebilir veya favorilere ekle butonuna basıp ürünü favorilere ekleyebilir. Şekil 3.4.6.1. de gösterilmiştir. Favoriler sayfasında eklenen ürünleri listesini taşınabilir belge biçimi (PDF) halinde indirebilir. Ürünlerin fiyatları “favorites” tablosunda “id”leri olduğu sürece her saat başı kontrol edilir. Bunun için arka tarafta bir zamanlayıcı kullanılır. @Scheduled(cron = "0 0 */1 * * *") ile her saat başı kontrol edilir. 
 
@@ -181,7 +181,7 @@ product_image	varchar(255)	Ürünün resminin URL'sini içerir. Maksimum 255 kar
 product_description	longtext	Ürünün detaylı açıklamasını içerir. Uzun metin olarak saklanır, böylece ayrıntılı bilgi verilebilir.
 product_category	int	Ürünün kategorisini belirtir. Kategori tablosuna bir dış anahtar olarak kullanılır, böylece ürünler kategorilere ayrılabilir.
 
-3.4.7. Favorilerin Görüntülenmesi
+### 3.4.7. Favorilerin Görüntülenmesi
 
 Favorilere eklenen ürünler, favoriler sayfasında listelenir. Aynı zamanda favorilerden çıkarma işlemini burada da yapılabilir. Şekil 3.4.7.1. de gösterilmektedir. Favorilerin veri tabanı tablosunun sütunlarının bilgileri ve bu sütunların amaçları Çizelge 3.4.4. de gösterilmektedir.
 
@@ -199,7 +199,7 @@ id	int	Birincil anahtarıdır ve her favori kaydına benzersiz bir kimlik numara
 user_id	int	Favori ürünü belirten kullanıcının kimlik numarasını içerir. users tablosuna yabancı anahtar olarak kullanılır.
 product_id	int	Kullanıcının favori olarak işaretlediği ürünün kimlik numarasını içerir. products tablosuna yabancı anahtar olarak kullanılır.
 
-3.4.8. Ürün Detayları
+### 3.4.8. Ürün Detayları
 
 Kullanıcı ürün detaylarını açtığında veri tabanından ürünün adı, resmi ve fiyat geçmişi bilgileri çekilir. ApexCharts.js ile fiyat bilgileri grafik haline getirilip, ürünün renk bilgisi JavaScript ile renk bloğu haline dönüştürülür ve kullanıcıya gösterilir. Şekil 3.4.8.1. de gösterilmiştir. Kullanıcı ürünün satış sayfasına erişmek istediğinde ürünün görseline tıklayıp satışın yapıldığı e-ticaret sitesine ulaşabilir.
 
@@ -235,7 +235,7 @@ comment	varchar(500)	Kullanıcının ürün hakkında yaptığı yorumu içerir.
 star	tinyint	Kullanıcının ürün için verdiği yıldız derecelendirmesini belirtir.  tinyint veri tipi kullanılarak, genellikle 1-5 arası bir değer alır.
 date	datetime	Yorumun yapıldığı tarih ve saat bilgisini içerir. Bu veri, yorumların zaman çizelgesinde izlenmesine olanak tanır.
 
-3.4.9. Takip Edilen Üründe Değişiklik
+### 3.4.9. Takip Edilen Üründe Değişiklik
 
 Kullanıcının takip ettiği ürünlerden birinde fiyat değişikliği olduğunda kullanıcıya mail gönderilerek haber verilir. Şekil 3.4.9. da gösterilmiştir.
 
@@ -243,7 +243,7 @@ Kullanıcının takip ettiği ürünlerden birinde fiyat değişikliği olduğun
   
 Şekil 3.4.9. Ürünün Fiyatı Düştü Maili Örneği.
 
-3.4.10. Yeni Ürün Eklenmesi
+### 3.4.10. Yeni Ürün Eklenmesi
 
 Kullanıcının yeni bir ürün kazıması durumunda, ürün başarıyla eklendi bilgi verilir. Şekil 3.4.10. da gösterilmiştir. Ayrıca ürünlerin kategori bilgilerinin tutulduğu tablonun sütunları ve bu sütunların amaçları Çizelge 3.4.7. de gösterilmektedir
 
@@ -265,7 +265,7 @@ Sütun Adı	Sütun Tipi	Açıklama
 category_id	int	Birincil anahtarıdır ve her kategoriye benzersiz bir kimlik numarası atar.
 category_name	varchar(45)	Kategorinin adını içerir. Maksimum 45 karakter uzunluğundadır.
 
-3.4.11. Veri Güvenliği ve Gizliliği
+### 3.4.11. Veri Güvenliği ve Gizliliği
 
 Kullanıcıların verilerini korumak için kullanıcı şifreleri Bcrypt ile şifrelenmiş olarak tutulmaktadır. Bu şifrelemenin örneği Şekil 3.4.11. de gösterilmiştir.
 
@@ -273,7 +273,7 @@ Kullanıcıların verilerini korumak için kullanıcı şifreleri Bcrypt ile şi
   
 Şekil 3.4.11. Kullanıcı Bilgi Güvenliği.
 
-3.4.11.1. Verilerin Saklanması
+#### 3.4.11.1. Verilerin Saklanması
 
 Şekil 3.4.11.1.’de verilen veritabanı Varlık-İlişki diyagramında sunulan tablolar; Çizelge 3.4.2. de veri tabanındaki kullanıcı bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.3. de veri tabanındaki ürün bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.4. de veri tabanındaki kullanıcıların favori olarak eklediği ürün bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.5. de veri tabanındaki belirli aralıklarla kazınan ürün fiyatlarının saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.6. de veri tabanındaki ürünlere kullanıcılar tarafından yapılan yorumların saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.7. da veri tabanındaki ürünlere atanabilecek kategori bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.9. de veri tabanındaki kazınan ürün ve kazıyan kullanıcı bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları gösterilmiştir.
 
@@ -281,7 +281,7 @@ Kullanıcıların verilerini korumak için kullanıcı şifreleri Bcrypt ile şi
   
 Şekil 3.4.11.1. Geliştirileb veri tabanı şemasının Varlık-İlişki diyagramı.
 
-3.4.12. Ürün Kategori Belirleme Algoritması
+### 3.4.12. Ürün Kategori Belirleme Algoritması
 
 Kategorilerin belirlenmesi için model oluştururken aşağıdaki Çizelge 3.4.8. de verilen Python kodu kullanılmıştır. Bu kod Keras kütüphanesini kullanarak bir dizi evrişimsel sinir ağı (Convolutional Neural Network - CNN) katmanı ve tam bağlantılı (Dense) katmanları içerin bir derin öğrenme modeli oluşturur. 
 
@@ -305,7 +305,7 @@ model.compile(optimizer=adam_optimizer, loss='categorical_crossentropy', metrics
 history=model.fit(train_generator, epoks=13)
 İlk olarak, Adam optimizasyon algoritması lr=0.135 öğrenme hızıyla başlatılır. Ardından, Sequential modeli oluşturulur. Bu, katmanların sıralı bir şekilde eklenmesine olanak sağlar. İlk katman, 32 filtre (nöron) ve (3,3) boyutunda bir filtre matrisi kullanır. Giriş şekli (64,64,3) olarak belirlenmiştir ve ReLU aktivasyon fonksiyonu kullanılır. Ardından, bir MaxPooling2D katmanı eklenir. Bu, her 2x2 piksel bloğunda maksimum değeri alarak görüntü boyutunu yarıya indirir. Bir sonraki Conv2D katmanı, 64 filtre ve (3,3) boyutunda bir filtre matrisi kullanır. Yine ReLU aktivasyon fonksiyonu kullanılır. Başka bir tane daha MaxPooling2D katmanı eklenir. Flatten katmanı, çok boyutlu tensörleri tek boyutlu bir vektöre dönüştürür. Bu, evrişimli ve havuzlama katmanlarından gelen çıktıları tam bağlantılı katmanlara beslemek için gereklidir. İki tam bağlantılı katman eklenir. İlk katman, 64 nöron ve ReLU aktivasyon fonksiyonu kullanır. İkinci katman, 42 nöron ve Softmax aktivasyon fonksiyonu kullanır. Softmax aktivasyonu, çok sınıflı sınıflandırma problemlerinde genellikle çıktı katmanında kullanılmaktadır. Model, compile metodu ile derlenir. Bu aşamada, optimizasyon algoritması, kayıp fonksiyonu ve metrikler belirlenir. Son olarak, model fit metodu ile eğitilir. Bu aşamada, eğitim verileri ve epok sayısı belirtilir. Bir epok, tüm eğitim örneklerinin ağdan geçtiği bir iterasyondur.
 
-3.4.13. Kullanılabilirlik
+### 3.4.13. Kullanılabilirlik
 
 Kullanıcı arayüzü, basit ve anlaşılır bir tasarıma sahiptir. Ana sayfa düzeni net ve kullanıcıların istedikleri ürünleri hızlı bir şekilde bulmalarını ve kolayca gezinmelerini sağlayacak şekilde düzenlenmiştir. Ürün fiyatlarını saatlik olarak takip etme, kategorilendirme yapma ve fiyat değişimlerinde kullanıcıya bildirme gibi işlevselliklere sahiptir. Kullanıcıların istedikleri ürünleri takip etmelerine ve fiyat değişikliklerinden haberdar olmalarına olanak tanır. Ürün fiyatlarının tutulduğu veri tabanı tablosu Çizelge 3.4.9. da gösterilmektedir.
 
