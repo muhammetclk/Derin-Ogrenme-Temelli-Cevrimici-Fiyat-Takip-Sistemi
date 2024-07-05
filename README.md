@@ -45,7 +45,8 @@ Stochastic Gradient Descent (SGD) optimizasyon algoritması, bir hedef fonksiyon
 Root Mean Square Propagation (RMSprop) optimizasyon algoritması, SGD algoritmasını bazı sorunlarını çözmek için tasarlanmıştır. RMSprop, karelerinin hareketli bir ortalamasını kullanarak öğrenme hızını adapte eder. Bu, her parametrenin öğrenme hızını adaptif bir şekilde ayarlayarak eğitim sırasında daha stabil bir konverjans sağlar.
 3.4. Geliştirilen Çevrimiçi Ürün Fiyat Takip Uygulaması
 Kullanıcı tema değiştirme, ürün arama, ürünleri kategorilerine göre filtreleme, favorilere ekleme, favorilerden kaldırma, profiline erişme, ürün detaylarını görme gibi çoğu işlemi yapabileceği Şekil 3.4.1. de gösterilmiştir.
- 
+
+   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/1.png)
 Şekil 3.4.1. Uygulama anasayfa ekran görüntüsü.
 3.4.1. Kullanıcı Kayıt İşlemi
 Kullanıcı ad, soyad, e-posta ve şifresini istenilen formatta girerek kayıt işlemini gerçekleştirir. Şekil 3.4.1.1. de gösterilmiştir. Eğer kullanıcı istenilen bilgileri yanlış formatta girerse veya boş bırakırsa uyarı gösterilir ve “Kayıt ol” butonuna tıklaması engellenir. Şekil 3.4.1.2. de gösterilmiştir. Kullanıcı bilgileri istenen şekilde girdiyse kayıt başarılı mesajı döndürülür. Şekil 3.4.1.3 de gösterilmiştir.
