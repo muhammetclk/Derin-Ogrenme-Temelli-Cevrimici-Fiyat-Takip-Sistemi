@@ -49,11 +49,14 @@ Root Mean Square Propagation (RMSprop) optimizasyon algoritması, SGD algoritmas
 Kullanıcı tema değiştirme, ürün arama, ürünleri kategorilerine göre filtreleme, favorilere ekleme, favorilerden kaldırma, profiline erişme, ürün detaylarını görme gibi çoğu işlemi yapabileceği Şekil 3.4.1. de gösterilmiştir.
 
    ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/1.png)
+   
 Şekil 3.4.1. Uygulama anasayfa ekran görüntüsü.
+
 ### 3.4.1. Kullanıcı Kayıt İşlemi
 Kullanıcı ad, soyad, e-posta ve şifresini istenilen formatta girerek kayıt işlemini gerçekleştirir. Şekil 3.4.1.1. de gösterilmiştir. Eğer kullanıcı istenilen bilgileri yanlış formatta girerse veya boş bırakırsa uyarı gösterilir ve “Kayıt ol” butonuna tıklaması engellenir. Şekil 3.4.1.2. de gösterilmiştir. Kullanıcı bilgileri istenen şekilde girdiyse kayıt başarılı mesajı döndürülür. Şekil 3.4.1.3 de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/2.png)
+  
 Şekil 3.4.1.1. Uygulama kullanıcı kayıt ekranı ekran görüntüsü.
 
 Çizelge 3.4.1. Kayıt Girdi Şartları.
@@ -66,13 +69,19 @@ Tekrar Şifre	Zorunlu, “Şifre” ile aynı olmalıdır.
 Çizelge 3.4.1. de kullanıcıların kayıt olması için istenilen veriler, bu verilerin kayıt işlemi için zorunlu ya da isteğe bağlı olma durumu ve bu verilerin hangi formatlarda olması gerektiği gösterilmektedir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/3.png)
+  
 Şekil 3.4.1.2. Kayıt Hatası.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/4.png)
+  
 Şekil 3.4.1.3. Kayıt Tamamlandı.
+
 Çizelge 3.4.2. de kullanıcıların veri tabanında nasıl tutulduğu gösterilmektedir. Veri tabanında bulunan id sütunu, her kullanıcıya benzersiz bir kimlik numarası atar ve birincil anahtar olarak kullanılır. Bu sayede her kullanıcı veri tabanında tekil olarak tanımlanır ve diğer tablolarda bu kimlik numarası ile ilişkilendirilebilir. Veri tabanında bulunan first_name sütunu, kullanıcının adını içerir. Maksimum 255 karakter uzunluğunda olabilir. Bu sütun, kullanıcıların kişisel isim bilgilerini saklamak için kullanılır. Veri tabanında bulunan last_name sütunu, kullanıcının soyadını içerir. Maksimum 255 karakter uzunluğunda olabilir. Bu sütun, kullanıcıların aile adlarını saklamak için kullanılır. Veri tabanında bulunan email sütunu, kullanıcının e-posta adresini saklar. Maksimum 255 karakter uzunluğunda olabilir ve benzersiz olmalıdır. Ayrıca, e-posta adresleri doğrulanmış olmalıdır, bu da kullanıcılarla iletişim kurmak ve kimlik doğrulama işlemlerinde kullanılmak üzere güvenli bir yol sağlar. Veri tabanında bulunan password sütunu, kullanıcının şifresini saklar. Maksimum 255 karakter uzunluğunda olabilir. Şifreler güvenlik için Bcrypt ile hashlenmiş olarak saklanır, böylece düz metin olarak kaydedilmez ve yetkisiz erişimlere karşı korunur. Veri tabanında bulunan activation sütunu, kullanıcının hesabının aktif olup olmadığını belirtir. true değeri hesap aktif, false değeri ise hesabın pasif olduğunu gösterir. Bu sütun, kullanıcıların hesaplarını etkinleştirme ve devre dışı bırakma işlemlerini yönetir. Veri tabanında bulunan activation_token sütunu, kullanıcı hesabının aktivasyonu için kullanılan tokenı içerir. Maksimum 255 karakter uzunluğunda olabilir. Bu token, hesap doğrulama ve aktivasyon süreçlerinde kullanılır. Veri tabanında bulunan image sütunu, kullanıcının profil resmi URL'sini saklar. Maksimum 255 karakter uzunluğunda olabilir. Bu sütun, kullanıcıların profil resimlerini sunucuda veya bulut tabanlı bir depolama hizmetinde saklamak için kullanılır.Veri tabanında bulunan password_reset_token sütunu, Kullanıcının şifresini sıfırlamak için kullanılan tokenı içerir. Maksimum 255 karakter uzunluğunda olabilir. Bu token, şifre unutma veya sıfırlama işlemlerinde kullanılır.Veri tabanında bulunan provider sütunu, kullanıcının kayıt olduğu sağlayıcıyı belirtir. Bu sütun, kullanıcının hangi platformdan kayıt olduğunu göstermek için kullanılır ve 'LOCAL', 'GOOGLE', 'FACEBOOK' gibi seçenekler içerebilir. Bu bilgi, kullanıcıların hangi üçüncü parti hizmetler üzerinden giriş yaptığını takip etmek için önemlidir. Veri tabanında bulunan role sütunu, kullanıcının rolünü belirtir. Bu sütun, kullanıcının yetki seviyesini ve sistemdeki rolünü tanımlar. Örneğin, 'USER' standart kullanıcıyı, 'ADMIN' ise yönetici kullanıcıyı temsil edebilir. Bu, farklı kullanıcı türlerine farklı erişim hakları vermek için kullanılır.
+
 Çizelge 3.4.2. Kullanıcılar Tablosunun Tanımları
+
 Sütun Adı	Sütun Tipi	Açıklama
+
 id	int	birincil anahtarıdır ve her kullanıcıya benzersiz bir kimlik numarası atar.
 first_name	varchar(255)	Kullanıcının adı. Maksimum 255 karakter uzunluğunda olabilir.
 last_name	varchar(255)	Kullanıcının soyadı. Maksimum 255 karakter uzunluğunda olabilir.
@@ -86,57 +95,83 @@ provider	enum	Kullanıcının kayıt olduğu sağlayıcıyı belirtir (örneğin
 role	enum	Kullanıcının rolünü belirtir (örneğin, 'USER', 'ADMIN').
 
 3.4.2. Kullanıcı Giriş İşlemi
+
 Kullanıcı kayıtlı ise e-posta ve şifre bilgisini kullanarak ya da “Google ile Giriş” butonunu kullanarak giriş yapabilir. Şekil 3.4.2.1. de gösterilmiştir. Eğer şifresini unuttuysa şifremi unuttum seçeneğine tıklayabilir. Eğer kullanıcı Çizelge 3.1'deki uygun olmayan formatta girdi yazarsa uyarı gösterilir ve “Giriş” butonuna basması engellenir. Şekil 3.1.2.2. de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/5.png)
+  
 Şekil 3.4.2.1. Uygulama giriş arayüzü ekran görüntüsü.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/6.png)
+  
 Şekil 3.4.2.2. Uygulama hatalı giriş arayüzü ekran görüntüsü.
+
 3.4.3. Hesap Doğrulama
 Kullanıcıya kayıt işleminin başarılı bir şekilde gerçekleştirdiğinde hesabını onaylaması için e-posta gönderildiğini gösteren bir pop-up gösterilir. Şekil 3.4.3.1. de gösterilmiştir. Eğer kullanıcının aktivasyon durumu onaylanmadıysa profilinden “Email Aktifleştirme” butonuna basıp gelen e-postadan hesabını aktifleştirdikten sonra giriş sayfasından hesabına giriş yapıp hesabını kullanabilir. Şekil 3.4.3.2. de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/7.png)
+  
 Şekil 3.4.3.1. Örnek Aktivasyon E-Postası Örneği.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/8.png)
+  
 Şekil 3.4.3.2. Aktivasyon E-Postası Göndermeyi Sağlayan Ekranın Örneği.
+
 Şekil 3.4.3.3. de kullanıcıların hesaplarını yeni oluşturduklarında detayları Çizelge 3.4.2. de bulunan olan activation ve activation_token değişiminin örneği gösterilmektedir. Kullanıcı yeni bir hesap oluşturduğunda rastgele bir token oluşturulur. Kullanıcı Şekil 3.4.3.1. de gösterilmiş olan e-postada bulunan “Buraya tıklayın” yazısına tıkladığında token silinir ve activation değeri 0’dan 1’e çevirilir. Kullanıcı bu işlemi yapmadan sistemi kullanamamaktadır.
   
 
  ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/9.png)
+ 
 Şekil 3.4.3.3. Aktivasyon Durumunu Gösteren Veri Tabanı Tablosu Kayıtları Örneği
+
 3.4.4. Şifre Sıfırlama
+
 Kullanıcı şifresini unutması durumunda e-posta bilgisini girerek şifre sıfırlama talebinde bulunabilir. Şekil 3.4.4.1. de gösterilmiştir. Kullanıcıya şifre sıfırlaması benzersiz bir bağlantı gönderilir. Şekil 3.4.4.2. de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/10.png)
+  
 Şekil 3.4.4.1 Şifre Sıfırlama Talebi Ekranı Örneği.
 
  ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/11.png)
  
 Şekil 3.4.4.2 Şifre Sıfırlama Elektronik Postası Örneği
+
 3.4.5. Profil Bilgileri
+
 Kullanıcı adının üstüne tıklayıp profiline ulaşabilir. Profilinden ad, soyad, e-posta veya şifre bilgilerini güncelleyebilir. Kullanıcının veri tabanından bulunan bilgileri inputlarda placeholder olarak gösterilir. Kullanıcı bilgi güncellemesi yapmak istemiyorsa iptal butonuna basarak çıkabilir. Kullanıcı e-posta adresi aktif değilse "Email Aktifleştirme" butonuna basarak hesap aktifleştirme maili alabilir. Şekil 3.4.5. de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/12.png)
+  
 Şekil 3.4.5. Profil Ekranı Örneği.
+
 3.4.5.1. E-Posta Güncelleme
+
 Kullanıcının mevcut e-posta adresi yer tutucu şeklinde gösterilir. Kullanıcı yeni e-posta bilgisini girip güncelle butonuna basarak e-posta adresi bilgisini güncelleyebilir. Kullanıcının oturumu sonlandırılır ve yeni e-posta adresiyle girmesi istenir. Ayrıca yeni e-posta adresine bir aktifleştirme maili gönderilir. Şekil 3.4.5.1. de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/13.png)
+  
 Şekil 3.4.5.1. E-Posta Güncelleme Ekranı Örneği.
+
 3.4.5.2. Şifre Güncelleme
+
 Kullanıcı şifre güncelleme sayfasına gelir. Mevcut şifre ve yeni şifresinin girilmesi istenir. Girilecek şifrenin bir büyük harf, bir küçük harf ve bir sayı içermesi ve altı karakter ya da daha uzun olması istenir. Kullanıcı güncelle butonuna bastığında oturumu sonlandırılır ve yeni şifre ile giriş yapması istenir. Şekil 3.4.5.2. de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/14.png)
+  
 Şekil 3.4.5.2. Şifre Güncelleme Ekranı Örneği.
+
 3.4.6. Ürün Arama
+
 Kullanıcı bir ürünün linkini aradığında jsoup ile ürünün bilgileri tanımlanmış olan “id” veya “class” attribute'larından çekilir ve aranan link veri tabanına kaydedilir. Jsoup kazıma işlemini gerçekleştikten sonra elde edilen veriler veri tabanına kaydedilir. Kullanıcının kazıdığı ürünler yeniden eskiye doğru sıralı bir şekilde gösterilir. Veri tabanına kaydedilen ürünün detaylarına, ürün görsel üzerine tıklanarak ya da ürün ismine tıklanarak ulaşılabilir. Ürünü, listeden sil butonuna basıp silebilir veya favorilere ekle butonuna basıp ürünü favorilere ekleyebilir. Şekil 3.4.6.1. de gösterilmiştir. Favoriler sayfasında eklenen ürünleri listesini taşınabilir belge biçimi (PDF) halinde indirebilir. Ürünlerin fiyatları “favorites” tablosunda “id”leri olduğu sürece her saat başı kontrol edilir. Bunun için arka tarafta bir zamanlayıcı kullanılır. @Scheduled(cron = "0 0 */1 * * *") ile her saat başı kontrol edilir. 
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/15.png)
+  
 Şekil 3.4.6.1. Ürün Arama Ekranı Örneği.
+
 Ürünlerin veri tabanında nasıl tutulduğu Çizelge 3.4.3. de gösterilmektedir. Veri tabanında bulunan product_id sütunu, her ürüne benzersiz bir kimlik numarası atar ve birincil anahtar olarak kullanılır. Bu sayede her ürün veri tabanında tekil olarak tanımlanır ve diğer tablolarda bu kimlik numarası ile ilişkilendirilebilir. Bu sütun, ürünlerin kolayca izlenebilmesini ve yönetilebilmesini sağlar. Veri tabanında bulunan product_name sütunu, ürünün adını içerir. Maksimum 255 karakter uzunluğunda olabilir. Bu sütun, ürünlerin adlarını saklamak için kullanılır ve kullanıcıların veya müşterilerin ürünleri tanımlamasına yardımcı olur. Veri tabanında bulunan product_price sütunu, ürünün fiyatını içerir. Ondalık sayı olarak saklanır, bu da ürünlerin fiyat bilgilerini kesin ve doğru bir şekilde tutmayı sağlar. Fiyat bilgisi, e-ticaret işlemlerinde kritik öneme sahiptir ve bu sütun, ürünlerin satış fiyatlarını içerecek şekilde tasarlanmıştır. Veri tabanında bulunan product_url sütunu, ürünün detaylı sayfasına yönlendiren bağlantıyı içerir. Bu alan uzun metin olarak saklanır, çünkü URL'ler uzun olabilir. Bu sütun, kullanıcıların ürünün detaylı bilgilerini görmek için tıklayabilecekleri bir bağlantıyı saklar. Veri tabanında bulunan product_image sütunu, ürünün resminin URL'sini içerir. Maksimum 255 karakter uzunluğunda olabilir. Bu sütun, ürünlerin görsel tanıtımını yapmaya yarayan resimlerin URL'lerini saklar. Müşterilerin ürünleri görsel olarak tanıması ve değerlendirmesi için önemlidir. Veri tabanında bulunan product_description sütunu, ürünün detaylı açıklamasını içerir. Uzun metin olarak saklanır, böylece ürün hakkında ayrıntılı bilgi verilebilir. Bu sütun, ürünlerin özelliklerini, kullanım alanlarını ve diğer önemli bilgileri açıklamak için kullanılır. Veri tabanında bulunan product_category sütunu, ürünün kategorisini belirtir. Kategori tablosuna bir dış anahtar olarak kullanılır, böylece ürünler kategorilere ayrılabilir. Bu sütun, ürünlerin belirli kategoriler altında gruplanmasını sağlar ve kategoriler arasında ilişkiler kurarak ürünlerin yönetimini ve aranılabilirliğini kolaylaştırır.
+
 Çizelge 3.4.3. Ürünler Tablosunun Tanımları
+
 Sütun Adı	Sütun Tipi	Açıklama
 product_id	int	birincil anahtarıdır ve her ürüne benzersiz bir kimlik numarası atar.
 product_name	varchar(255)	Ürünün adını içerir. Maksimum 255 karakter uzunluğundadır.
@@ -147,24 +182,35 @@ product_description	longtext	Ürünün detaylı açıklamasını içerir. Uzun m
 product_category	int	Ürünün kategorisini belirtir. Kategori tablosuna bir dış anahtar olarak kullanılır, böylece ürünler kategorilere ayrılabilir.
 
 3.4.7. Favorilerin Görüntülenmesi
+
 Favorilere eklenen ürünler, favoriler sayfasında listelenir. Aynı zamanda favorilerden çıkarma işlemini burada da yapılabilir. Şekil 3.4.7.1. de gösterilmektedir. Favorilerin veri tabanı tablosunun sütunlarının bilgileri ve bu sütunların amaçları Çizelge 3.4.4. de gösterilmektedir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/16.png)
+  
 Şekil 3.4.7.1. Favoriler Sayfası Ekranı Örneği.
+
 Veri tabanında bulunan id sütunu, her ürün-kullanıcı ikilisine benzersiz bir kimlik numarası atar ve birincil anahtar olarak kullanılır. Bu sayede her her ürün-kullanıcı ikilisi veri tabanında tekil olarak tanımlanır ve bu sayede kullanıcı ile ilişkili ürünler favoriler sayfasında gösterilir. Veri tabanında bulunan user_id sütunu, kullanıcılar tablosunun id sütunundan yabancı anahtar olarak alınır. Veri tabanında bulunan product_id sütunu, ürünler tablosunda bulunan product_id sütundan yabancı anahtar olarak alınır.
+
 Çizelge 3.4.4. Kullanıcı Favorileri Tablosunun Tanımları
+
 Sütun Adı	Sütun Tipi	Açıklama
+
 id	int	Birincil anahtarıdır ve her favori kaydına benzersiz bir kimlik numarası atar.
 user_id	int	Favori ürünü belirten kullanıcının kimlik numarasını içerir. users tablosuna yabancı anahtar olarak kullanılır.
 product_id	int	Kullanıcının favori olarak işaretlediği ürünün kimlik numarasını içerir. products tablosuna yabancı anahtar olarak kullanılır.
 
 3.4.8. Ürün Detayları
+
 Kullanıcı ürün detaylarını açtığında veri tabanından ürünün adı, resmi ve fiyat geçmişi bilgileri çekilir. ApexCharts.js ile fiyat bilgileri grafik haline getirilip, ürünün renk bilgisi JavaScript ile renk bloğu haline dönüştürülür ve kullanıcıya gösterilir. Şekil 3.4.8.1. de gösterilmiştir. Kullanıcı ürünün satış sayfasına erişmek istediğinde ürünün görseline tıklayıp satışın yapıldığı e-ticaret sitesine ulaşabilir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/17.png)
+  
 Şekil 3.4.8.1. Ürün Detayları Sayfası Örneği.
+
 Şekil 3.4.8.1. de gösterilen fiyat grafiğinin oluşturulabilmesi için fiyatların düzenli olarak kazınıp saklandığı veri tabanı tablosu Çizelge 3.4.5. de gösterilmiştir. 
+
 Çizelge 3.4.5. Ürün Fiyatları Tablosunun Tanımları
+
 Sütun Adı	Sütun Tipi	Açıklama
 id	int	birincil anahtarıdır ve her fiyat kaydına benzersiz bir kimlik numarası atar.
 product_id	int	Fiyat kaydının hangi ürüne ait olduğunu belirtir. products tablosuna dış anahtar olarak kullanılır.
@@ -173,10 +219,15 @@ scraping_date	date	Fiyat bilgisinin kaydedildiği tarihi içerir. Bu, fiyat değ
 Kullanıcı ürün hakkında düşüncesini yorum yapabilir ve ürüne puan verebilir. Ayrıca diğer kullanıcıların yapmış olduğu değerlendirmeleri de görebilir. Şekil 3.4.8.2. de gösterilmiştir.
 
    ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/18.png)
+   
 Şekil 3.4.8.2. Ürün Yorumu Sayfası Örneği.
+
 Şekil 3.4.8.2 de gösterilen yorumlar, Çizelge 3.4.6. da gösterilen veri tabanı tablosu sütunlarında saklanmaktadır.
+
 Çizelge 3.4.6. Ürün Yorumları Tablosunun Tanımları
+
 Sütun Adı	Sütun Tipi	Açıklama
+
 id	int	Birincil anahtarıdır ve her yorum kaydına benzersiz bir kimlik numarası atar.
 user_id	int	Yorumu yapan kullanıcının kimlik numarasını belirtir. “users” tablosuna dış anahtar olarak kullanılır.
 product_id	int	Yorumu yapılan ürünün kimlik numarasını belirtir. “products” tablosuna dış anahtar olarak kullanılır.
@@ -185,11 +236,15 @@ star	tinyint	Kullanıcının ürün için verdiği yıldız derecelendirmesini b
 date	datetime	Yorumun yapıldığı tarih ve saat bilgisini içerir. Bu veri, yorumların zaman çizelgesinde izlenmesine olanak tanır.
 
 3.4.9. Takip Edilen Üründe Değişiklik
+
 Kullanıcının takip ettiği ürünlerden birinde fiyat değişikliği olduğunda kullanıcıya mail gönderilerek haber verilir. Şekil 3.4.9. da gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/19.png)
+  
 Şekil 3.4.9. Ürünün Fiyatı Düştü Maili Örneği.
+
 3.4.10. Yeni Ürün Eklenmesi
+
 Kullanıcının yeni bir ürün kazıması durumunda, ürün başarıyla eklendi bilgi verilir. Şekil 3.4.10. da gösterilmiştir. Ayrıca ürünlerin kategori bilgilerinin tutulduğu tablonun sütunları ve bu sütunların amaçları Çizelge 3.4.7. de gösterilmektedir
 
 
@@ -201,26 +256,37 @@ Kullanıcının yeni bir ürün kazıması durumunda, ürün başarıyla eklendi
 
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/20.png)
+  
 Şekil 3.4.10. Yeni Ürün Eklendi Bildirimi Örneği.
 
 Çizelge 3.4.7. Kategoriler Tablosunun Tanımları
+
 Sütun Adı	Sütun Tipi	Açıklama
 category_id	int	Birincil anahtarıdır ve her kategoriye benzersiz bir kimlik numarası atar.
 category_name	varchar(45)	Kategorinin adını içerir. Maksimum 45 karakter uzunluğundadır.
 
 3.4.11. Veri Güvenliği ve Gizliliği
+
 Kullanıcıların verilerini korumak için kullanıcı şifreleri Bcrypt ile şifrelenmiş olarak tutulmaktadır. Bu şifrelemenin örneği Şekil 3.4.11. de gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/21.png)
+  
 Şekil 3.4.11. Kullanıcı Bilgi Güvenliği.
+
 3.4.11.1. Verilerin Saklanması
+
 Şekil 3.4.11.1.’de verilen veritabanı Varlık-İlişki diyagramında sunulan tablolar; Çizelge 3.4.2. de veri tabanındaki kullanıcı bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.3. de veri tabanındaki ürün bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.4. de veri tabanındaki kullanıcıların favori olarak eklediği ürün bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.5. de veri tabanındaki belirli aralıklarla kazınan ürün fiyatlarının saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.6. de veri tabanındaki ürünlere kullanıcılar tarafından yapılan yorumların saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.7. da veri tabanındaki ürünlere atanabilecek kategori bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları, Çizelge 3.4.9. de veri tabanındaki kazınan ürün ve kazıyan kullanıcı bilgilerinin saklandığı tablonun sütunlarının tuttuğu veri türleri ve amaçları gösterilmiştir.
 
   ![image](https://github.com/muhammetclk/Derin-Ogrenme-Temelli-Cevrimici-Fiyat-Takip-Sistemi/blob/main/reactspring/src/main/resources/static/22.png)
+  
 Şekil 3.4.11.1. Geliştirileb veri tabanı şemasının Varlık-İlişki diyagramı.
+
 3.4.12. Ürün Kategori Belirleme Algoritması
+
 Kategorilerin belirlenmesi için model oluştururken aşağıdaki Çizelge 3.4.8. de verilen Python kodu kullanılmıştır. Bu kod Keras kütüphanesini kullanarak bir dizi evrişimsel sinir ağı (Convolutional Neural Network - CNN) katmanı ve tam bağlantılı (Dense) katmanları içerin bir derin öğrenme modeli oluşturur. 
+
 Çizelge 3.4.8. Model Oluşturma Kodu Örneği
+
 from keras.optimizers import Adam
 
 model = Sequential()
@@ -238,9 +304,13 @@ model.compile(optimizer=adam_optimizer, loss='categorical_crossentropy', metrics
 
 history=model.fit(train_generator, epoks=13)
 İlk olarak, Adam optimizasyon algoritması lr=0.135 öğrenme hızıyla başlatılır. Ardından, Sequential modeli oluşturulur. Bu, katmanların sıralı bir şekilde eklenmesine olanak sağlar. İlk katman, 32 filtre (nöron) ve (3,3) boyutunda bir filtre matrisi kullanır. Giriş şekli (64,64,3) olarak belirlenmiştir ve ReLU aktivasyon fonksiyonu kullanılır. Ardından, bir MaxPooling2D katmanı eklenir. Bu, her 2x2 piksel bloğunda maksimum değeri alarak görüntü boyutunu yarıya indirir. Bir sonraki Conv2D katmanı, 64 filtre ve (3,3) boyutunda bir filtre matrisi kullanır. Yine ReLU aktivasyon fonksiyonu kullanılır. Başka bir tane daha MaxPooling2D katmanı eklenir. Flatten katmanı, çok boyutlu tensörleri tek boyutlu bir vektöre dönüştürür. Bu, evrişimli ve havuzlama katmanlarından gelen çıktıları tam bağlantılı katmanlara beslemek için gereklidir. İki tam bağlantılı katman eklenir. İlk katman, 64 nöron ve ReLU aktivasyon fonksiyonu kullanır. İkinci katman, 42 nöron ve Softmax aktivasyon fonksiyonu kullanır. Softmax aktivasyonu, çok sınıflı sınıflandırma problemlerinde genellikle çıktı katmanında kullanılmaktadır. Model, compile metodu ile derlenir. Bu aşamada, optimizasyon algoritması, kayıp fonksiyonu ve metrikler belirlenir. Son olarak, model fit metodu ile eğitilir. Bu aşamada, eğitim verileri ve epok sayısı belirtilir. Bir epok, tüm eğitim örneklerinin ağdan geçtiği bir iterasyondur.
+
 3.4.13. Kullanılabilirlik
+
 Kullanıcı arayüzü, basit ve anlaşılır bir tasarıma sahiptir. Ana sayfa düzeni net ve kullanıcıların istedikleri ürünleri hızlı bir şekilde bulmalarını ve kolayca gezinmelerini sağlayacak şekilde düzenlenmiştir. Ürün fiyatlarını saatlik olarak takip etme, kategorilendirme yapma ve fiyat değişimlerinde kullanıcıya bildirme gibi işlevselliklere sahiptir. Kullanıcıların istedikleri ürünleri takip etmelerine ve fiyat değişikliklerinden haberdar olmalarına olanak tanır. Ürün fiyatlarının tutulduğu veri tabanı tablosu Çizelge 3.4.9. da gösterilmektedir.
+
 Çizelge 3.4.9. Kazıma İşlemleri Tablosunun Tanımları
+
 Sütun Adı	Sütun Tipi	Açıklama
 user_id	int	Kazıma işlemini gerçekleştiren kullanıcının kimlik numarasını belirtir. users tablosuna dış anahtar olarak kullanılır.
 product_id	int	Kazınan fiyat verisinin hangi ürüne ait olduğunu belirtir. products tablosuna dış anahtar olarak kullanılır.
